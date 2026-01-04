@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useLocal: 1
-  urlGame: https://server-game-unity.onrender.com
+  urlGame: http://server-game-unity.onrender.com
   urlLocal: http://localhost:3000/status
   onServerOnline:
     m_PersistentCalls:

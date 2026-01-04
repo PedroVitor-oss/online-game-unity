@@ -267,6 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f002703e67787408cbc3d1cdbf4768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLocal: 0
+  urlGame: wss://server-game-unity.onrender.com/ws
+  urlLocal: ws://localhost:3000/ws
 --- !u!4 &703111574
 Transform:
   m_ObjectHideFlags: 0

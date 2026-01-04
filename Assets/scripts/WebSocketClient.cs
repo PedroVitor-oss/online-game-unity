@@ -14,6 +14,9 @@ using Newtonsoft.Json.Linq;
 public class WebSocketClient : MonoBehaviour
 {
     private ClientWebSocket webSocket;
+    public bool useLocal = false;
+    public string urlGame = "wss://server-game-unity.onrender.com/ws";
+    public string urlLocal = "ws://localhost:8080/ws";
     public static WebSocketClient Instance { get; private set; }
 
     async void Start()
@@ -23,10 +26,21 @@ public class WebSocketClient : MonoBehaviour
         webSocket = new ClientWebSocket();
         try
         {
+            if(useLocal)
+            {
+                await webSocket.ConnectAsync(
+                    new System.Uri(urlLocal),
+                    CancellationToken.None
+                );
+            }
+            else
+            {
+                
             await webSocket.ConnectAsync(
-                new System.Uri("ws://localhost:3000/ws"),
+                new System.Uri(urlGame),
                 CancellationToken.None
             );
+            }
             Debug.Log("Conectado ao servidor!");
 
             // Recebe mensagens
